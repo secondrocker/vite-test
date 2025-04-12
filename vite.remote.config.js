@@ -9,12 +9,12 @@ export default defineConfig({
     'process.env.APP_ENV': JSON.stringify('prod'),
   },
   build: {
-    outDir: 'production_dist/static/js/remote',
+    outDir: '/Users/oudong/Desktop/files/static/js/remote',
     sourcemap: false,
     lib: {
       entry: resolve(__dirname, './src/components/helloWorld.vue'),
       name: 'helloWorld',
-      formats: ['iife', 'umd'],
+      formats: ['iife', 'umd', 'amd', 'es'],
       fileName: () => `[name].[format].js`
     },
     cssMinify: true,

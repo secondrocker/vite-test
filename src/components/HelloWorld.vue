@@ -8,7 +8,8 @@ export default {
       type: String,
       default: 'there'
     }
-  }
+  },
+  name: 'helloWorld'
 }
 </script>
 <style scoped>

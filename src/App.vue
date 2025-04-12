@@ -2,7 +2,7 @@
 import HelloWorldIife from './components/remote/remote-iife.vue'
 import HelloWorldIifeCss from './components/remote/remote-iife-css.vue'
 import HelloWorldUmd from './components/remote/remote-umd.vue'
-import HelloWorldUmdRequire from './components/remote/remote-umd-import.vue'
+import HelloWorldEsm from './components/remote/remote-esm.vue'
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import HelloWorldUmdRequire from './components/remote/remote-umd-import.vue'
   <HelloWorldIifeCss msg="iife-css" />
   <HelloWorldUmd msg="umd" />
   <HelloWorldUmdRequire msg="umd-import" />
-
+  <HelloWorldEsm msg="esm" />
 </template>
 
 <style scoped>

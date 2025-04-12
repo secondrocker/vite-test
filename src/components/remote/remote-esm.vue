@@ -8,6 +8,7 @@
   </component>
 </template>
 <script>
+  import helloWorld from 'http://my-local.com/static/js/remote/HelloWorld.es.js'
   export default {
     data () {
       return {
@@ -15,8 +16,7 @@
       }
     },
     async mounted () {
-      this.resData = await import('http://localhost:5173/HelloWorld.umd.js')
-      this.resData = window.helloWorld
+      this.resData = helloWorld
     }
   }
 </script>

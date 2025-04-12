@@ -16,7 +16,7 @@
       }
     },
     async mounted () {
-      const res = await Axios.get("/HelloWorld.umd.js", {}, { baseUrl: '//' })
+      const res = await Axios.get("http://my-local.com/static/js/remote/HelloWorld.umd.js", {}, { baseUrl: '//' })
       new Function(`${res.data}`)()  // eslint-disable-line
       this.resData = window.helloWorld
     }
