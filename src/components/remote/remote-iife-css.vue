@@ -18,7 +18,7 @@
       }
     },
     async mounted () {
-      const res = await Axios.get("http://my-local.com/static/js/remote/HelloWorld.iife.css.js", {}, { baseUrl: '//' })
+      const res = await Axios.get("http://wd-local.com/HelloWorld.iife.css.js", {}, { baseUrl: '//' })
       this.resData = new Function(`${res.data};return helloWorld;`)()  // eslint-disable-line
     }
   }

@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>remote component test</title>
+  </head>
+  <body>
+    <div id="app">
+      <hello_world_esm msg="esm"></hello_world_esm>
+      <hello_word_umd_amd msg="umd:amd"></hello_word_umd_amd>
+      <hello_word_amd msg="amd"></hello_word_amd>
+    </div>
+    <!-- import script vue3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+    <script type="module">
+      const { createApp, defineAsyncComponent } = Vue
+      import hello_world_esm from 'http://wd-local.com/HelloWorld.es.js'
+      // const helloworld = defineAsyncComponent(() => 
+      //   import('http://wd-local.com/HelloWorld.es.js')
+      // )
+
+      // requirejs 加载 amd/umd 兼容模式 模块
+      async function loadUmd (url) {
+        return new Promise((resolve, reject) => {
+          requirejs([url], function(module) {
+            resolve(module)
+          });
+        })
+      }
+      // 加载 umd 模块
+      const hello_word_umd_amd = await loadUmd('http://wd-local.com/HelloWorld.umd.js')
+      // 加载 amd 模块
+      const hello_word_amd = await loadUmd('http://wd-local.com/HelloWorld.amd.js')
+      createApp({
+        // 注册组件
+        components: {
+          hello_world_esm,
+          hello_word_umd_amd,
+          hello_word_amd
+        },
+        data () {
+          return {
+          }
+        }
+      }).mount('#app')
+    </script>
+  </body>
+</html>

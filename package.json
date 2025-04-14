@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "requirejs": "^2.3.7",
+    "vite-plugin-commonjs": "^0.10.4",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vue": "^3.5.13"
   },

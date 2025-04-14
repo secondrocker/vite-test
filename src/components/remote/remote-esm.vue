@@ -8,7 +8,8 @@
   </component>
 </template>
 <script>
-  import helloWorld from 'http://my-local.com/static/js/remote/HelloWorld.es.js'
+  // 直接 从 远程esm 文件 引入
+  import helloWorld from 'http://wd-local.com/HelloWorld.es.js'
   export default {
     data () {
       return {
